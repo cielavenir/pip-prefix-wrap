@@ -23,9 +23,8 @@ setuptools.setup(
         'Topic :: Software Development',
     ],
     packages=setuptools.find_packages(),
-    python_requires=">=2.7",
+    python_requires=">=2.7, <3.4",
     install_requires=[
         'aenum',
     ],
 )
-

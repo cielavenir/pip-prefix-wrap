@@ -1,6 +1,6 @@
 import sys
-if sys.version_info>=(3,5):
-    # if somehow loaded on Python 3.5+ (possibly by buggy PYTHONPATH), should load original enum
+if sys.version_info>=(3,4):
+    # if somehow loaded on Python 3.4+ (possibly by buggy PYTHONPATH), should load original enum
     # using technique described in https://qiita.com/cielavenir/items/8d3ca1b6a0b6298b4d55
     from os.path import dirname
     from os.path import realpath
