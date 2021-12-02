@@ -5,6 +5,7 @@ if sys.version_info>=(3,4):
     from os.path import dirname
     from os.path import realpath
     from importlib import reload
+    sys_path_orig = sys.path[:]
     myroot = realpath(dirname(dirname(__file__)))
     for i in range(len(sys.path)-1,-1,-1):
         if realpath(sys.path[i]) == myroot:
@@ -13,6 +14,7 @@ if sys.version_info>=(3,4):
     reload(enum)
     __all__ = enum.__all__
     from enum import *
+    sys.path[:] = sys_path_orig
 else:
     import aenum
     __all__ = aenum.__all__
