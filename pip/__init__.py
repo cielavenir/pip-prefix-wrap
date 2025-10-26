@@ -14,7 +14,6 @@ if True:
     reload(pip)
     sys.path[:] = sys_path_orig
 
-
 import os
 if os.name == 'posix':
     # implement https://github.com/pypa/pip/pull/13634 by monkey-patch
