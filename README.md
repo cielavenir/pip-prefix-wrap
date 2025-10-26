@@ -1,7 +1,23 @@
-## enum34-aenum-proxy
+## pip-prefix-wrap
 
-Overrides [enum34](https://pypi.org/project/enum34/) installation to use [aenum](https://pypi.org/project/aenum/)
+Wraps pip to force posix_prefix scheme on posix platform. This is convenient to create environments using `--prefix=` for Debian systems.
 
-install: pip install git+https://github.com/cielavenir/enum34-aenum-proxy.git
+install:
 
-please don't upload to repos like pypi to respect original enum34 author.
+You need to bootstrap with patched setuptools or you cannot install this pip to expected path :sweat:
+
+```
+# export PYTHONPATH=/foo/bar
+git clone https://github.com/cielavenir/setuptools.git
+cd setuptools
+git checkout
+python3 setup.py install --prefix=/foo/bar
+cd ..
+
+git clone https://github.com/cielavenir/pip-prefix-wrap.git
+cd pip-prefix-wrap
+python3 setup.py install --prefix=/foo/bar
+cd ..
+```
+
+note: when you add this pip monkeypatch to PYTHONPATH, you must specify --prefix (or --home), or you will clobber system unexpectedly (i.e. do not pass PYTHONPATH when running sudo).
