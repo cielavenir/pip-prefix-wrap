@@ -23,3 +23,9 @@ if os.name == 'posix':
     locations_sysconfig._infer_prefix = _infer_prefix
     del _infer_prefix
     del locations_sysconfig
+    import pip._internal.build_env as build_env
+    def get_runnable_pip():
+        return os.path.join(os.path.dirname(__file__), '__pip-runner__.py')
+    build_env.get_runnable_pip = get_runnable_pip
+    del get_runnable_pip
+    del build_env
