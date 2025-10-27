@@ -39,7 +39,7 @@ class PipImportRedirectingFinder:
         if fullname != "pip":
             return None
 
-        spec = PathFinder.find_spec(fullname, [PIP_SOURCES_ROOT], target)
+        spec = PathFinder.find_spec(fullname, [PIP_SOURCES_ROOT, '/usr/lib/python3/dist-packages'], target)
         assert spec, (PIP_SOURCES_ROOT, fullname)
         return spec
 
