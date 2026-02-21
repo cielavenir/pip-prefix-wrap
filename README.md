@@ -2,7 +2,9 @@
 
 Wraps pip to force posix_prefix scheme on posix platform. This is convenient to create environments using `--prefix=` for Debian systems.
 
-install:
+## Install
+
+### setuptools
 
 You need to bootstrap with patched setuptools or you cannot install this pip to expected path :sweat:
 
@@ -20,7 +22,13 @@ python3 setup.py install --prefix=/foo/bar
 cd ..
 ```
 
-note: when you add this pip monkeypatch to PYTHONPATH, you must specify --prefix (or --home), or you will clobber system unexpectedly (i.e. do not pass PYTHONPATH when running sudo).
+### CMake
+
+Alternatively you can build this CMakeLists.txt.
+
+## Caveats
+
+When you add this pip monkeypatch to PYTHONPATH, you must specify --prefix (or --home), or you will clobber system unexpectedly. In other words, do not pass PYTHONPATH when running sudo.
 
 ## Pull Requests
 

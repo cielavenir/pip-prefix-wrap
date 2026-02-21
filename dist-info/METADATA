@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: pip_prefix_wrap
+Version: 1.0.0
+Summary: patch pip scheme to posix_prefix
+Home-page: https://github.com/cielavenir/pip-prefix-wrap
+Author: cielavenir
+Author-email: cielartisan@gmail.com
+License: MIT
+Keywords: pip
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development
+Requires-Python: >=3.11
